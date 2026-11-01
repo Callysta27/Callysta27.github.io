@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Callysta Dethan · Data Analyst &amp; Web Developer</title>
+  <meta name="description" content="Portofolio Callysta Dethan, mahasiswi Sistem Informasi Untar. Analisis data, data warehouse &amp; ETL, dan aplikasi web." />
+  <meta property="og:title" content="Callysta Dethan · Data Analyst &amp; Web Developer" />
+  <meta property="og:description" content="Analisis data, data warehouse &amp; ETL, dan aplikasi web. Lagi cari tempat magang 2026." />
+  <meta property="og:type" content="website" />
+  <meta name="author" content="Callysta Dethan" />
+
+  <!-- Google Font: Schibsted Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet monokrom (CSS terpisah) -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Latar titik data bergelombang & beriak saat diklik (canvas) -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Bar progres scroll -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- =============================================================
+       1. NAVBAR
+       ============================================================= -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Callysta Dethan, kembali ke atas">
+        <span class="avatar" aria-hidden="true">CD</span>
+        Callysta Dethan
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#work" data-close>Proyek</a>
+        <a href="#skills" data-close>Keahlian</a>
+        <a href="#about" data-close>Tentang</a>
+        <a href="#experience" data-close>Pengalaman</a>
+      </nav>
+
+      <button class="theme-btn desk" type="button" aria-label="Ganti tema terang/gelap" data-theme-toggle>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" />
+        </svg>
+      </button>
+
+      <a class="btn small hire" href="#contact">Hubungi aku</a>
+
+      <button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu" id="menuOpen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu layar penuh (HP) -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="top">
+      <a class="brand" href="#top" data-close>
+        <span class="avatar" aria-hidden="true">CD</span>
+        Callysta Dethan
+      </a>
+      <button class="menu-btn" style="display:grid" type="button" aria-label="Tutup menu" id="menuClose">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </div>
+
+    <nav aria-label="Navigasi HP">
+      <a href="#work" data-close>Proyek</a>
+      <a href="#skills" data-close>Keahlian</a>
+      <a href="#about" data-close>Tentang</a>
+      <a href="#experience" data-close>Pengalaman</a>
+    </nav>
+
+    <button class="btn ghost" type="button" data-theme-toggle style="margin-top:auto;justify-content:center">
+      Ganti tema (☀/☾)
+    </button>
+    <a class="btn" href="#contact" data-close style="margin-top:10px">
+      Hubungi aku
+    </a>
+  </div>
+
+  <main id="top">
+    <!-- =============================================================
+         2. HERO
+         ============================================================= -->
+    <section class="hero">
+      <div class="wrap">
+        <a class="pill" href="#contact">
+          <span class="pulse" aria-hidden="true"></span>
+          Lagi cari tempat magang 2026
+        </a>
+
+        <h1>Aku suka ngulik data dan bikin aplikasi web.</h1>
+
+        <p class="hero-lede">
+          Halo, aku Callysta. Sekarang kuliah Sistem Informasi di Untar. Paling senang kalau dapat data yang berantakan terus pelan-pelan dirapikan, atau bikin aplikasi yang akhirnya beneran dipakai orang.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#work">Lihat proyekku</a>
+          <a class="btn ghost" href="mailto:callystadethhan123@gmail.com">Kirim email</a>
+        </div>
+
+        <p class="hero-hint">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <circle cx="12" cy="12" r="8" opacity=".5" />
+          </svg>
+          Coba klik di mana aja, titik-titiknya bakal goyang.
+        </p>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3. SKILLS
+         ============================================================= -->
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <div class="wrap">
+        <div class="services-head">
+          <div>
+            <p class="kicker">Keahlian</p>
+            <h2 class="h2" id="skills-h">Yang biasa aku kerjain</h2>
+          </div>
+          <p class="lede">
+            Semua ini udah pernah aku pakai langsung di proyek, bukan cuma teori di kelas. Contohnya bisa dilihat di bagian proyek.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Data Analytics & EDA -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+              </div>
+              <span class="skill-badge">11 juta+ baris</span>
+            </div>
+            <h3 class="skill-title">Analisis Data</h3>
+            <p class="skill-desc">
+              Kasih aku dataset yang berantakan, aku malah semangat. Biasanya aku bersihin dulu, tambah kolom yang berguna, terus bikin grafik yang bisa jawab pertanyaannya.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Pandas</span>
+              <span class="skill-chip">Google Colab</span>
+              <span class="skill-chip">EDA &amp; Visualisasi</span>
+              <span class="skill-chip">Excel</span>
+            </div>
+          </div>
+
+          <!-- 2. Database Design & SQL -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                </svg>
+              </div>
+              <span class="skill-badge">3NF</span>
+            </div>
+            <h3 class="skill-title">Desain Database &amp; SQL</h3>
+            <p class="skill-desc">
+              Aku suka database yang rapi dari awal. Mulai dari ERD, normalisasi, view buat laporan, sedikit PL/SQL, sampai query yang nggak bikin nunggu lama.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">Oracle PL/SQL</span>
+              <span class="skill-chip">SQL Server</span>
+              <span class="skill-chip">ERD &amp; Normalisasi</span>
+            </div>
+          </div>
+
+          <!-- 3. Data Warehouse & ETL -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="7" height="7" x="3" y="3" rx="1" />
+                  <rect width="7" height="7" x="14" y="3" rx="1" />
+                  <rect width="7" height="7" x="14" y="14" rx="1" />
+                  <rect width="7" height="7" x="3" y="14" rx="1" />
+                  <path d="M10 6.5h4M17.5 10v4M14 17.5h-4M6.5 14v-4" />
+                </svg>
+              </div>
+              <span class="skill-badge">Galaxy schema</span>
+            </div>
+            <h3 class="skill-title">Data Warehouse &amp; ETL</h3>
+            <p class="skill-desc">
+              Pernah nyatuin data dari 6 sistem berbeda milik ritel dengan 120+ cabang ke satu data warehouse. Pakai skema Kimball, SCD, dan incremental load.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">SSIS</span>
+              <span class="skill-chip">Kimball</span>
+              <span class="skill-chip">Tabel Fakta &amp; Dimensi</span>
+              <span class="skill-chip">ETL Pipelines</span>
+            </div>
+          </div>
+
+          <!-- 4. Web Development -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="20" height="14" x="2" y="3" rx="2" />
+                  <line x1="8" x2="16" y1="21" y2="21" />
+                  <line x1="12" x2="12" y1="17" y2="21" />
+                </svg>
+              </div>
+              <span class="skill-badge">Fullstack &amp; Docker</span>
+            </div>
+            <h3 class="skill-title">Aplikasi Web</h3>
+            <p class="skill-desc">
+              Aku senang bikin aplikasi yang nyelesaiin masalah nyata. Misalnya website pesan makanan biar anak kampus nggak perlu antre di kantin, atau aplikasi rental mobil yang bikin invoice sendiri.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">Java Spring Boot</span>
+              <span class="skill-chip">PHP</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">Bootstrap</span>
+              <span class="skill-chip">Docker</span>
+            </div>
+          </div>
+
+          <!-- 5. Systems Analysis & Design -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 3h5v5" />
+                  <path d="M8 3H3v5" />
+                  <path d="M12 21v-8" />
+                  <path d="M9 13h6" />
+                  <path d="m21 3-8.5 8.5" />
+                  <path d="m3 3 8.5 8.5" />
+                </svg>
+              </div>
+              <span class="skill-badge">BPMN &amp; Figma</span>
+            </div>
+            <h3 class="skill-title">Analisis &amp; Desain Sistem</h3>
+            <p class="skill-desc">
+              Sebelum nulis kode, aku mau ngerti dulu alurnya. Jadi aku tanya-tanya ke pengguna, gambar prosesnya, terus bikin rancangan kasarnya di Figma.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">SDLC</span>
+              <span class="skill-chip">UML</span>
+              <span class="skill-chip">BPMN</span>
+              <span class="skill-chip">Figma Wireframing</span>
+            </div>
+          </div>
+
+          <!-- 6. Leadership & Collaboration -->
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <span class="skill-badge">4× team lead</span>
+            </div>
+            <h3 class="skill-title">Team Lead &amp; Kerja Tim</h3>
+            <p class="skill-desc">
+              Entah kenapa aku sering kebagian jadi ketua tim. Aku bagi tugas, jaga biar timeline aman, rapikan kode bareng di GitHub, dan biasanya juga yang presentasi.
+            </p>
+            <div class="skill-chips">
+              <span class="skill-chip">Git &amp; GitHub</span>
+              <span class="skill-chip">Sprint Planning</span>
+              <span class="skill-chip">Presentasi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         4. ABOUT
+         ============================================================= -->
+    <section class="section" id="about" aria-labelledby="about-h" style="padding-top:0">
+      <div class="wrap about">
+        <div>
+          <p class="kicker">Tentang aku</p>
+          <h2 class="h2" id="about-h">Orang yang suka nanya “kok bisa gitu?” ke data.</h2>
+          <p>
+            Nama lengkapku <strong>Callysta Elysia Theona Dethan</strong>, panggil aja Callysta.
+            Sekarang semester 5 jurusan Sistem Informasi di Universitas Tarumanagara, Jakarta Barat.
+          </p>
+          <p>
+            Aku paling tertarik sama <strong>Data Analytics</strong> dan <strong>Business Intelligence</strong>.
+            Rasanya puas banget waktu angka yang tadinya bikin pusing ternyata bisa dijelasin pakai
+            satu grafik sederhana. Aku juga bikin aplikasi web, soalnya insight baru ada gunanya
+            kalau ada yang bisa pakai.
+          </p>
+          <p>
+            Di tugas kelompok, aku udah empat kali jadi team lead. Sekarang aku lagi cari tempat
+            magang, pengennya di tim data atau tim developer biar bisa belajar langsung dari yang udah pengalaman.
+          </p>
+          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+            <a class="btn ghost" href="#work">Lihat proyekku</a>
+            <a class="btn ghost" href="/cv.pdf" download="CV_Callysta_Dethan.pdf">Unduh CV (PDF)</a>
+          </div>
+        </div>
+
+        <!-- Tumpukan kartu identitas -->
+        <div class="id-stack" aria-hidden="true">
+          <div class="id-card a">
+            <div class="big-avatar">CD</div>
+            <div>
+              <p class="name">Callysta Dethan</p>
+              <p class="meta">Sistem Informasi, Universitas Tarumanagara</p>
+            </div>
+          </div>
+          <div class="id-card b">
+            <div>
+              <p class="gpa">3,82</p>
+              <p class="gpa-l">IPK dari 4,00</p>
+            </div>
+            <p class="gpa-l" style="margin:0">8 proyek · 4× team lead</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         5. PROJECTS
+         ============================================================= -->
+    <section class="section" id="work" aria-labelledby="work-h" style="padding-top:24px">
+      <div class="wrap">
+        <div class="work-head">
+          <div>
+            <p class="kicker">Proyek</p>
+            <h2 class="h2" id="work-h" style="margin-bottom:0">Yang pernah aku bikin</h2>
+          </div>
+
+          <div class="filters" role="group" aria-label="Filter proyek">
+            <button type="button" aria-pressed="true" data-filter="all">Semua</button>
+            <button type="button" aria-pressed="false" data-filter="data">Data</button>
+            <button type="button" aria-pressed="false" data-filter="web">Web</button>
+          </div>
+        </div>
+
+        <!-- Daftar proyek interaktif (di-render dari script.js) -->
+        <ol class="work-list" id="workGrid"></ol>
+        <p class="work-count" id="workCount"></p>
+
+        <!-- Pratinjau proyek yang mengikuti kursor -->
+        <div class="peek" id="peek" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         6. EXPERIENCE & EDUCATION
+         ============================================================= -->
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <div class="wrap">
+        <div class="services-head">
+          <div>
+            <p class="kicker">Pengalaman &amp; Pendidikan</p>
+            <h2 class="h2" id="exp-h">Perjalananku sejauh ini</h2>
+          </div>
+          <p class="lede">
+            Sekilas soal apa aja yang udah aku lewatin, sampai akhirnya jatuh cinta sama data dan ngoding.
+          </p>
+        </div>
+
+        <div class="timeline-container" id="timelineContainer">
+          <!-- Garis latar & garis progres timeline -->
+          <div class="timeline-track">
+            <div class="timeline-line-fill" id="timelineLineFill"></div>
+          </div>
+
+          <div class="timeline-items">
+            <!-- Milestone 1: 2026 -->
+            <div class="timeline-item" data-milestone="2026">
+              <div class="timeline-marker">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <span class="timeline-dot-ping" aria-hidden="true"></span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date-tag">2026 · WORKSHOP</div>
+                <h3 class="timeline-title">AI &amp; Technology Skills Workshop</h3>
+                <div class="timeline-org">Codepolitan · AI &amp; Prompt Engineering</div>
+                <p class="timeline-desc">
+                  Belajar cara pakai AI dengan benar dan bertanggung jawab. Sekarang kepakai banget buat ngecek data dan ngerjain kode lebih cepat.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Prompt Engineering</span>
+                  <span class="timeline-tag">Generative AI</span>
+                  <span class="timeline-tag">Responsible AI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 2: 2025 - 2026 -->
+            <div class="timeline-item" data-milestone="2025-2026">
+              <div class="timeline-marker">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <span class="timeline-dot-ping" aria-hidden="true"></span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date-tag">2025–2026 · KEPEMIMPINAN</div>
+                <h3 class="timeline-title">Team Lead di 4 proyek kampus</h3>
+                <div class="timeline-org">FTI Universitas Tarumanagara · Tim mahasiswa</div>
+                <p class="timeline-desc">
+                  Mimpin teman sekelas di proyek GoRent, Money Changer, dan sistem database kos. Aku yang atur pembagian kerja, jaga kode tetap rapi di GitHub, pegang desain database, dan presentasi hasilnya ke dosen.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">4× Team Lead</span>
+                  <span class="timeline-tag">Sprint Planning</span>
+                  <span class="timeline-tag">Git &amp; GitHub</span>
+                  <span class="timeline-tag">Desain Database</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 3: 2024 - sekarang -->
+            <div class="timeline-item" data-milestone="2024-now">
+              <div class="timeline-marker">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <span class="timeline-dot-ping" aria-hidden="true"></span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date-tag">2024–SEKARANG · KULIAH</div>
+                <h3 class="timeline-title">S1 Sistem Informasi · IPK 3,82 / 4,00</h3>
+                <div class="timeline-org">Universitas Tarumanagara · Fakultas Teknologi Informasi (semester 5)</div>
+                <p class="timeline-desc">
+                  Fokus di data analytics, BI, dan rekayasa perangkat lunak. Mata kuliah favorit sejauh ini: data warehouse, SQL lanjut, visualisasi data pakai Python, dan web development.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">IPK 3,82</span>
+                  <span class="timeline-tag">Data Analytics &amp; BI</span>
+                  <span class="timeline-tag">Galaxy Schema</span>
+                  <span class="timeline-tag">Software Engineering</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 4: 2023 - 2024 -->
+            <div class="timeline-item" data-milestone="2023-2024">
+              <div class="timeline-marker">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <span class="timeline-dot-ping" aria-hidden="true"></span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date-tag">2023–2024 · AWAL MULA</div>
+                <h3 class="timeline-title">Algoritma &amp; Dasar Database</h3>
+                <div class="timeline-org">Lab Komputer FTI Untar</div>
+                <p class="timeline-desc">
+                  Di sinilah semuanya mulai. Belajar Java, struktur data, algoritma, dan cara bikin database relasional yang benar.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Java OOP</span>
+                  <span class="timeline-tag">RDBMS &amp; SQL</span>
+                  <span class="timeline-tag">Struktur Data</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         7. QUOTE & TECH MARQUEE
+         ============================================================= -->
+    <section class="quote" aria-label="Prinsip kerja">
+      <div class="wrap">
+        <figure style="margin:0">
+          <blockquote>“Data mentah nggak ada artinya sampai ada yang mau nanya, ngerapihin, dan jelasin isinya.”</blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">CD</span>
+            Pegangan aku tiap ngerjain proyek
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="marquee" aria-label="Teknologi yang aku pakai">
+      <div class="marquee-track" id="marquee"></div>
+    </div>
+
+    <!-- =============================================================
+         8. CONTACT
+         ============================================================= -->
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <h2 id="contact-h">Yuk ngobrol.</h2>
+        <p>Lagi cari anak magang buat tim data atau developer? Atau penasaran sama salah satu proyekku? Kirim email aja, pasti aku balas.</p>
+
+        <div class="mail-row">
+          <a class="mail" href="mailto:callystadethhan123@gmail.com">callystadethhan123@gmail.com</a>
+          <button class="btn ghost small" type="button" id="copyMail">Salin email</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============================================================
+       9. FOOTER
+       ============================================================= -->
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <span>© 2026 Callysta Dethan · Sistem Informasi Untar</span>
+      <nav aria-label="Tautan sosial">
+        <a href="https://www.linkedin.com/in/callysta-dethan-a3112225b" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Callysta27" target="_blank" rel="noopener">GitHub</a>
+        <a href="/cv.pdf" download="CV_Callysta_Dethan.pdf">Unduh CV</a>
+        <a href="#top">Kembali ke atas ↑</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- =============================================================
+       10. DIALOG DETAIL PROYEK
+       ============================================================= -->
+  <dialog id="projectDialog" aria-labelledby="dlgTitle">
+    <div class="dlg-in">
+      <div class="dlg-top">
+        <div>
+          <h2 id="dlgTitle"></h2>
+          <p class="dlg-sub" id="dlgSub"></p>
+        </div>
+        <button class="theme-btn close-x" type="button" aria-label="Tutup" id="dlgClose">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+      <div class="dlg-body" id="dlgBody"></div>
+    </div>
+  </dialog>
+
+  <!-- Toast notifikasi -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Script (JavaScript terpisah) -->
+  <script src="./script.js"></script>
+</body>
+</html>
